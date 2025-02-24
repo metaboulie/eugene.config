@@ -95,15 +95,14 @@ alias rc 'ruff check'
 alias rf 'ruff format'
 
 # bat
-function help
+function help -d 'print help message'
   # Execute command in a new fish process to ensure fish builtins work correctly
   # fish -c evaluates the following string as fish code in a new process
   command fish -c "$argv --help" 2>&1 | bat -l help -p
   or command fish -c "$argv -h" 2>&1 | bat -l help -p
 end
 
-# show changes lines for all files in pwd
-function df
+function df -d 'show changes lines for all files in pwd'
   fd . --type file | xargs bat --diff 
 end
 
@@ -112,8 +111,7 @@ set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx MANROFFOPT "-c"
 
 # yazi
-alias y 'yazi'
-function y
+function y -d 'open yazi'
   set tmp (mktemp -t "yazi-cwd.XXXXXX")
   yazi $argv --cwd-file="$tmp"
   if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
