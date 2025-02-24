@@ -1,0 +1,64 @@
+[completion]
+activate_on_typing = true
+copilot = false
+
+[display]
+code_editor_font_size = 14
+cell_output = "above"
+theme = "dark"
+default_width = "compact"
+dataframes = "rich"
+
+[snippets]
+custom_paths = []
+include_default_snippets = true
+
+[server]
+follow_symlink = false
+browser = "default"
+
+[package_management]
+manager = "uv"
+add_script_metadata = true
+
+[keymap]
+preset = "vim"
+[keymap.overrides]
+"cell.focusUp" = "Ctrl-Shift-k"
+"cell.focusDown" = "Ctrl-Shift-j"
+"global.toggleSidebar" = "Ctrl-Shift-h"
+"completion.moveDown" = "Ctrl-j"
+"completion.moveUp" = "Ctrl-k"
+"cell.createBelow" = "Ctrl-Shift-p"
+"cell.createAbove" = "Ctrl-Shift-o"
+
+[experimental]
+rtc = false
+tracing = true
+multi_column = true
+chat_sidebar = true
+
+[formatting]
+line_length = 79
+
+[ai]
+rules = "- prefer polars over pandas\n- make charts using altair"
+
+[ai.anthropic]
+
+[ai.google]
+
+[ai.open_ai]
+base_url = "http://127.0.0.1:11434/v1"
+api_key = "ollama"
+model = "qwen2.5:0.5b"
+
+[save]
+format_on_save = true
+autosave = "after_delay"
+autosave_delay = 1000
+
+[runtime]
+auto_instantiate = true
+on_cell_change = "autorun"
+auto_reload = "off"
