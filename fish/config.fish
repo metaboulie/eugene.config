@@ -119,3 +119,12 @@ function y -d 'open yazi'
   end
   rm -f -- "$tmp"
 end
+
+# hgrep
+function hg -d 'prettier regex search'
+  command hgrep --no-grid --printer bat -S "$argv" | less -R
+end
+
+function check -d 'print credential info in cwd'
+  command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
+end
