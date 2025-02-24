@@ -11,36 +11,39 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "eugene.plugins" }, { import = "eugene.plugins.lsp" } }, {
-	dev = {
-		path = "~/dev/nvim",
-		patterns = {},
-		fallback = false,
-	},
-	checker = {
-		enabled = true,
-		notify = false,
-	},
-	change_detection = {
-		notify = false,
-	},
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
+require("lazy").setup(
+	{ { import = "eugene.plugins" }, { import = "eugene.plugins.lsp" }, { import = "eugene.plugins.lang" } },
+	{
+		dev = {
+			path = "~/dev/nvim",
+			patterns = {},
+			fallback = false,
 		},
-	},
-})
+		checker = {
+			enabled = true,
+			notify = false,
+		},
+		change_detection = {
+			notify = false,
+		},
+		ui = {
+			-- If you are using a Nerd Font: set icons to an empty table which will use the
+			-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+			icons = vim.g.have_nerd_font and {} or {
+				cmd = "⌘",
+				config = "🛠",
+				event = "📅",
+				ft = "📂",
+				init = "⚙",
+				keys = "🗝",
+				plugin = "🔌",
+				runtime = "💻",
+				require = "🌙",
+				source = "📄",
+				start = "🚀",
+				task = "📌",
+				lazy = "💤 ",
+			},
+		},
+	}
+)

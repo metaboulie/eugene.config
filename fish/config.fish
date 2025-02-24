@@ -2,6 +2,7 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 fish_add_path /usr/local/bin
 fish_add_path /Users/chanhuizhihou/.local/bin
+fish_add_path $HOME/.ghcup/bin
 
 # set default editor 
 set -gx EDITOR nvim
